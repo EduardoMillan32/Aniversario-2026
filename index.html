@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Feliz Aniversario Amor</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="game-screen">
+        <h2 id="level-title">Nivel 1</h2>
+        <p id="items-counter">Recoge los objetos: 0/3</p>
+        
+        <div id="game-board"></div>
+
+        <div class="mobile-controls">
+            <button id="btn-up" class="d-pad">⬆️</button>
+            <div class="horizontal-btns">
+                <button id="btn-left" class="d-pad">⬅️</button>
+                <button id="btn-right" class="d-pad">➡️</button>
+            </div>
+            <button id="btn-down" class="d-pad">⬇️</button>
+        </div>
+    </div>
+
+    <div id="taunt-modal" class="hidden modal">
+        <div class="modal-content">
+            <h2>¡Ouch! 💥</h2>
+            <p id="taunt-msg">Aquí va la burla...</p>
+            <button id="btn-retry">Reintentar</button>
+        </div>
+    </div>
+
+    <div id="slider-modal" class="hidden modal">
+        <div class="modal-content slider-content">
+            <h2 id="slider-title">¡Nivel Superado!</h2>
+            
+            <div class="slider-container">
+                <button id="slide-prev">◀</button>
+                <img id="slider-img" src="" alt="Nuestros recuerdos">
+                <button id="slide-next">▶</button>
+            </div>
+            
+            <p id="slider-counter">Foto 1 de 3</p>
+            <button id="btn-next-level">Ir al siguiente nivel 🎮</button>
+        </div>
+    </div>
+
+    <div id="final-screen" class="hidden">
+        <div id="collage-background"></div> <div class="final-card">
+            <h1>¡Feliz Aniversario! 🎉</h1>
+            <p>Desde ese primer día, han pasado:</p>
+            <div id="live-timer">
+                <span id="t-years">0</span> Años, 
+                <span id="t-months">0</span> Meses, <br>
+                <span id="t-days">0</span> Días, 
+                <span id="t-hours">0</span> Horas, <br>
+                <span id="t-mins">0</span> Minutos y 
+                <span id="t-secs">0</span> Segundos.
+            </div>
+            <p>Y los que nos faltan... Te amo. ❤️</p>
+            <button id="btn-regalo">Reclamar Vale por Cena 🍽️</button>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
