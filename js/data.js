@@ -1,12 +1,19 @@
 /* --- js/data.js --- */
 
 const GAME_CONFIG = {
+    Derrota: [
+        "¡Uy! Más lenta que el internet de los 90s. 😂 ¡Vas de nuevo!",
+        "¿Esos son tus reflejos? Con razón siempre te gano. 🐢",
+        "¡Te atraparon! Menos mal que para enamorarme fuiste más rápida. 🥰"
+    ],
     niveles: [
         {
             id: 1,
-            itemEmoji: "☕",    
-            enemigoEmoji: "🚦", 
-            metaEmoji: "❤️",    
+            itemEmoji: "☕",
+            enemigoEmoji: "🚦",
+            metaEmoji: "❤️",
+            cantidadFotos: 3,
+            extension: ".jpg",
             // T=Arriba, B=Abajo, I=Izquierda, D=Derecha | -P=Jugador, -O=Objeto, -E=Enemigo, -M=Meta
             mapa: [
                 //COLUMNA
@@ -14,17 +21,17 @@ const GAME_CONFIG = {
                 // Fila 1
                 ["TI",      "T",    "TD",   "T",    "T",    "T",    "T",    "TD"],
                 // Fila 2
-                ["BD-P",    " ",     "T",    "T",   "I",     "TD",   "D",    "D-O"],
+                ["BD-P",    " ",    "T",    "T",    "I",    "TD",   "D",    "D-O"],
                 // Fila 3
-                ["I",       " ",     "TD",   " ",     "T",    "D",    "T",    "D"],
+                ["I",       " ",    "TD",   " ",    "T",    "D",    "T",    "D"],
                 // Fila 4
-                ["ID",      "T",    "T",    " ",     "T",    "T",    " ",     "TD"],
+                ["ID",      "T",    "T",    " ",    "T",    "T",    " ",    "TD-E"],
                 // Fila 5
-                ["IT",      " ",    "ID",    "T",    "T",    "ID",   "T",    "D-E"],
+                ["IT",      " ",    "ID",   "T",    "T",    "ID",   "T",    "D"],
                 // Fila 6
-                ["ID",      " ",     "T",    "D",    "T",    "I",    "D",    "TD"],
+                ["ID",      " ",    "T",    "D",    "T",    "I",    "D",    "TD"],
                 // Fila 7
-                ["IT",      " ",     "T",    "ID",   " ",     "T",    "T",    "-M"],
+                ["IT",      " ",    "T",    "ID",   " ",    "T",    "T",    "-M"],
                 // Fila 8
                 ["IB",      "TDB",  "B",    "TB",   "BD",   "BD",   "TB",   "BD"]
             ]
@@ -33,7 +40,9 @@ const GAME_CONFIG = {
             id: 2,
             itemEmoji: "☕",    
             enemigoEmoji: "🚦", 
-            metaEmoji: "❤️",    
+            metaEmoji: "❤️",
+            cantidadFotos: 3,
+            extension: ".jpg",
             // T=Arriba, B=Abajo, I=Izquierda, D=Derecha | -P=Jugador, -O=Objeto, -E=Enemigo, -M=Meta
             mapa: [
                 //COLUMNA
@@ -64,7 +73,9 @@ const GAME_CONFIG = {
             id: 3,
             itemEmoji: "☕",    
             enemigoEmoji: "🚦", 
-            metaEmoji: "❤️",    
+            metaEmoji: "❤️",
+            cantidadFotos: 3,
+            extension: ".jpg",
             // T=Arriba, B=Abajo, I=Izquierda, D=Derecha | -P=Jugador, -O=Objeto, -E=Enemigo, -M=Meta
             mapa: [
                 //COLUMNA
@@ -93,7 +104,9 @@ const GAME_CONFIG = {
             id: 4,
             itemEmoji: "☕",    
             enemigoEmoji: "🚦", 
-            metaEmoji: "❤️",    
+            metaEmoji: "❤️",
+            cantidadFotos: 3,
+            extension: ".jpg",
             // T=Arriba, B=Abajo, I=Izquierda, D=Derecha | -P=Jugador, -O=Objeto, -E=Enemigo, -M=Meta
             mapa: [
                 //COLUMNA
@@ -120,7 +133,9 @@ const GAME_CONFIG = {
             id: 5,
             itemEmoji: "☕",    
             enemigoEmoji: "🚦", 
-            metaEmoji: "❤️",    
+            metaEmoji: "❤️",
+            cantidadFotos: 3,
+            extension: ".jpg",
             // T=Arriba, B=Abajo, I=Izquierda, D=Derecha | -P=Jugador, -O=Objeto, -E=Enemigo, -M=Meta
             mapa: [
                 //COLUMNA

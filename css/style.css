@@ -209,3 +209,31 @@ button {
 button:active {
     background-color: #ad144b;
 }
+
+/* =========================================
+   ESTILOS PARA EL CARRUSEL (SLIDER) DE FOTOS
+========================================= */
+
+/* El contenedor que rodea la imagen y los botones ◀ y ▶ */
+.slider-container {
+    display: flex; /* Alinea los botones y la imagen en una fila horizontal */
+    justify-content: center; /* Centra horizontalmente todo el contenido */
+    align-items: center; /* Centra verticalmente los botones con respecto a la imagen */
+    gap: 15px; /* Espacio entre los botones y la imagen */
+    margin: 20px 0; /* Margen arriba y abajo */
+    width: 100%; /* Ocupa todo el ancho disponible dentro del modal */
+}
+
+/* La imagen en sí */
+#slider-img {
+    /* --- EL SECRETO DE LA RESPONSIVIDAD --- */
+    max-width: 100%; /* La foto nunca será más ancha que su contenedor */
+    height: auto; /* Mantiene la proporción correcta de la foto sin deformarla */
+    
+    /* --- LÍMITES OPCIONALES (Para que no se vea gigante) --- */
+    max-height: 50vh; /* Evita que la foto sea más alta que la mitad de la pantalla */
+    border-radius: 10px; /* Bordes suaves */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Sombrita para que resalte */
+    object-fit: contain; /* Asegura que la imagen completa quepa dentro del espacio */
+}
+
