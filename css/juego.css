@@ -1,0 +1,119 @@
+/* --- css/juego.css (ESTRUCTURA PRINCIPAL Y TABLERO) --- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100dvh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; 
+    align-items: center;
+    background-color: #fce4ec; 
+    overflow: hidden; 
+}
+
+/* --- PANTALLA DEL JUEGO --- */
+#game-screen {
+    width: 100%;
+    max-width: 400px; 
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    color: #d81b60;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+}
+
+#items-counter {
+    font-weight: bold;
+    margin-bottom: 15px;
+    background: #fff;
+    padding: 5px 15px;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-size: 0.9rem;
+}
+
+/* --- EL TABLERO (LABERINTO POR BORDES) --- */
+#game-board {
+    display: grid;
+    background-color: #fafafa;
+    padding: 5px; 
+    
+    /* Obligamos al tablero a ocupar siempre este espacio cuadrado */
+    width: min(95vw, 60vh); 
+    height: min(95vw, 60vh);
+    max-width: 400px; 
+    max-height: 400px;
+    
+    gap: 0;
+    box-sizing: border-box; 
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1); 
+    border-radius: 6px;
+}
+
+/* Cada cuadrito del mapa */
+.cell {
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; 
+}
+
+/* Las paredes un poquito más delgadas para que no se amontonen en laberintos grandes */
+.wall-T { border-top: 3px solid #78909c; }
+.wall-B { border-bottom: 3px solid #78909c; }
+.wall-I { border-left: 3px solid #78909c; }
+.wall-D { border-right: 3px solid #78909c; }
+
+.emoji-sprite {
+    z-index: 2;
+}
+
+/* --- CONTROLES PARA MÓVIL --- */
+.mobile-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; 
+    margin-bottom: 10px; 
+}
+
+.horizontal-btns {
+    display: flex;
+    gap: 40px; 
+}
+
+.d-pad {
+    background-color: #fff;
+    border: 3px solid #d81b60;
+    border-radius: 50%;
+    width: 55px; 
+    height: 55px;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 0 #d81b60; 
+    cursor: pointer;
+    color: #333; 
+    -webkit-tap-highlight-color: transparent; 
+}
+
+.d-pad:active {
+    transform: translateY(4px);
+    box-shadow: none; 
+}

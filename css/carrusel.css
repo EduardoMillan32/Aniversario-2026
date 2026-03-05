@@ -1,0 +1,19 @@
+/* --- css/carrusel.css (DISEÑO DE LAS FOTOS) --- */
+
+.slider-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 15px; 
+    margin: 20px 0; 
+    width: 100%; 
+}
+
+#slider-img {
+    max-width: 100%; 
+    height: auto; 
+    max-height: 50vh; 
+    border-radius: 10px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+    object-fit: contain; 
+}

@@ -1,0 +1,91 @@
+/* --- css/ventanas.css (MODALES Y PANTALLA FINAL) --- */
+
+/* La clase 'hidden' es crucial para ocultar las ventanas */
+.hidden {
+    display: none !important;
+}
+
+/* El fondo oscuro transparente que cubre el juego */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+}
+
+/* La cajita blanca del mensaje */
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    max-width: 90%;
+    width: 350px;
+    border: 4px solid #d81b60;
+}
+
+.modal-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+/* --- PANTALLA FINAL (Aniversario) --- */
+#final-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fce4ec; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; 
+}
+
+.final-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    border: 4px solid #d81b60;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    max-width: 90%;
+}
+
+.final-card h1 {
+    color: #d81b60;
+    margin-bottom: 20px;
+}
+
+#live-timer {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #555;
+    margin: 20px 0;
+    line-height: 1.8;
+}
+
+/* --- ESTILOS DE BOTONES GENÉRICOS --- */
+button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin-top: 15px;
+    background-color: #d81b60;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:active {
+    background-color: #ad144b;
+}

@@ -12,6 +12,9 @@ let totalItems = 0;
 let enemies = []; 
 let enemyInterval = null;
 
+//1 = Derecha, -1 = Izquierda
+let playerFacing = 1;
+
 function loadLevel(esReintento = false) {
     clearInterval(enemyInterval); 
     const levelData = GAME_CONFIG.niveles[currentLevelIndex];
@@ -20,6 +23,7 @@ function loadLevel(esReintento = false) {
         mapArray = JSON.parse(JSON.stringify(levelData.mapa)); 
         collectedItems = 0;
         totalItems = 0;
+        playerFacing = 1;
     } else {
         for (let y = 0; y < mapArray.length; y++) {
             for (let x = 0; x < mapArray[y].length; x++) {
@@ -90,6 +94,12 @@ function movePlayer(dx, dy) {
 
     mapArray[playerPos.y][playerPos.x] = currentCell.replace('-P', '');
     mapArray[nextY][nextX] = mapArray[nextY][nextX] + '-P';
+
+    if (dx === 1) {
+        playerFacing = 1;  // Movió a la derecha
+    } else if (dx === -1) {
+        playerFacing = -1; // Movió a la izquierda
+    }
     
     playerPos = { x: nextX, y: nextY };
     drawMap(); 
