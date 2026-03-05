@@ -8,13 +8,16 @@
 }
 
 body {
-    background-color: #fce4ec; /* Rosa suave original */
-    color: #333;
+    margin: 0;
+    padding: 0;
+    height: 100dvh; /* El secreto: 100% del alto dinámico de la pantalla */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly; /* Reparte el espacio disponible de forma inteligente */
     align-items: center;
-    min-height: 100vh;
-    overflow: hidden; 
+    background-color: #fce4ec; /* O el color rosa que estés usando de fondo */
+    overflow: hidden; /* ¡Súper importante! Evita que la pantalla se deslice al tocarla */
+    font-family: sans-serif;
 }
 
 /* --- PANTALLA DEL JUEGO --- */
@@ -47,10 +50,18 @@ h2 {
 #game-board {
     display: grid;
     background-color: #fafafa;
-    padding: 5px; /* Un pequeño margen para que respire */
-    width: 95vw; 
-    max-width: 380px; 
+    padding: 5px; 
+    
+    /* LA MAGIA RESPONSIVA: */
+    width: min(95vw, 55vh); 
+    height: min(95vw, 55vh);
+    max-width: 400px; 
+    max-height: 400px;
+    
     gap: 0;
+    box-sizing: border-box; 
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1); /* Sombrita bonita */
+    border-radius: 6px;
 }
 
 /* Cada cuadrito del mapa */
@@ -78,36 +89,38 @@ h2 {
    CONTROLES PARA MÓVIL (Botones)
 ========================================= */
 .mobile-controls {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 5px; /* Redujimos el hueco entre los botones */
+    margin-bottom: 10px; /* Un pequeño margen abajo para que no toquen el borde */
 }
 
 .horizontal-btns {
     display: flex;
-    gap: 60px; /* Espacio entre el botón de Izquierda y Derecha */
+    gap: 40px; /* Redujimos el espacio entre Izquierda y Derecha */
 }
 
 .d-pad {
     background-color: #fff;
     border: 3px solid #d81b60;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 55px; /* Un poquito más compactos */
+    height: 55px;
     font-size: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 5px 0 #d81b60;
+    box-shadow: 0 4px 0 #d81b60; /* Sombra ajustada al nuevo tamaño */
     cursor: pointer;
-    color: #333; /* Color de las flechas */
+    color: #333; 
+    /* Esta línea evita que el botón se quede "seleccionado" de color azul en celulares al tocarlo: */
+    -webkit-tap-highlight-color: transparent; 
 }
 
 .d-pad:active {
-    transform: translateY(5px);
-    box-shadow: none; /* Efecto de que se presiona el botón */
+    transform: translateY(4px);
+    box-shadow: none; 
 }
 
 

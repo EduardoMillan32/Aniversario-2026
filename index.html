@@ -36,10 +36,22 @@
         <div class="modal-content slider-content">
             <h2 id="slider-title">¡Nivel Superado!</h2>
             
+            <div id="level-timer-container" style="margin-bottom: 15px;">
+                <p id="level-timer-label" style="font-weight: bold; color: #d81b60; margin-bottom: 5px;">Desde ese evento han pasado:</p>
+                <div id="level-live-timer" style="font-size: 0.9rem; color: #555; line-height: 1.4;">
+                    <span id="t-years" style="font-weight: bold;">0</span> Años, 
+                    <span id="t-months" style="font-weight: bold;">0</span> Meses, 
+                    <span id="t-days" style="font-weight: bold;">0</span> Días, <br>
+                    <span id="t-hours" style="font-weight: bold;">0</span> Horas, 
+                    <span id="t-mins" style="font-weight: bold;">0</span> Minutos y 
+                    <span id="t-secs" style="font-weight: bold;">0</span> Segundos.
+                </div>
+            </div>
+
             <div class="slider-container">
                 <img id="slider-img" src="" alt="Nuestros recuerdos">
             </div>
-            
+
             <button id="btn-next-level">Ir al siguiente nivel 🎮</button>
         </div>
     </div>

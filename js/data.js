@@ -14,6 +14,8 @@ const GAME_CONFIG = {
             metaEmoji: "❤️",
             cantidadFotos: 3,
             extension: ".jpg",
+            tituloEvento: "Desde que me diste tu numero han pasado:",
+            fechaEvento: "2018-04-27T07:30:00",
             // T=Arriba, B=Abajo, I=Izquierda, D=Derecha | -P=Jugador, -O=Objeto, -E=Enemigo, -M=Meta
             mapa: [
                 //COLUMNA
@@ -43,6 +45,8 @@ const GAME_CONFIG = {
             metaEmoji: "❤️",
             cantidadFotos: 3,
             extension: ".jpg",
+            tituloEvento: "Desde nuestra primera cita han pasado:",
+            fechaEvento: "2018-05-20T15:38:00",
             // T=Arriba, B=Abajo, I=Izquierda, D=Derecha | -P=Jugador, -O=Objeto, -E=Enemigo, -M=Meta
             mapa: [
                 //COLUMNA
@@ -60,7 +64,7 @@ const GAME_CONFIG = {
                 // Fila 6
                 ["I",   "I",    "T",    "IT",   "I",    "T",    "D",    "D",    " ",     "ITD"],
                 // Fila 7
-                ["I",   "T",    " ",     " ",     "T",    " ",     "T",    "D",    " ",     "ID"],
+                ["I-E",   "T",    " ",     " ",     "T",    " ",     "T",    "D",    " ",     "ID"],
                 // Fila 8
                 ["IT",  "T",    " ",     "I",    "IT",   "I",    "IT",   "T",    " ",     "D"],
                 // Fila 9
@@ -76,6 +80,8 @@ const GAME_CONFIG = {
             metaEmoji: "❤️",
             cantidadFotos: 3,
             extension: ".jpg",
+            tituloEvento: "Desde nuestro primer beso han pasado:",
+            fechaEvento: "2018-06-02T16:30:00",
             // T=Arriba, B=Abajo, I=Izquierda, D=Derecha | -P=Jugador, -O=Objeto, -E=Enemigo, -M=Meta
             mapa: [
                 //COLUMNA
@@ -87,11 +93,11 @@ const GAME_CONFIG = {
                 // Fila 3
                 ["I",       " ",     " ",     "I",    "ID",    "T",   "T",    " ",     "TD"],
                 // Fila 4
-                ["ID",      " ",     "IT",   "I",    "T",    " ",     "T",    "IT",   "D"],
+                ["ID",      " ",     "IT",   "I-E",    "T",    " ",     "T",    "IT",   "D"],
                 // Fila 5
                 ["IT",      " ",     " ",     "IT",   "T",    " ",     "I",    "I",    "ID"],
                 // Fila 6
-                ["I",       "IT",   "I",   "T",    "IT",    "T",    "I",    "I",     "TD"],
+                ["I",       "IT-E",   "I",   "T",    "IT",    "T",    "I",    "I",     "TD"],
                 // Fila 7
                 ["I",       " ",     "T",    "I",    " ",     "T",    "I",    "T",     "TD"],
                 // Fila 8
@@ -107,6 +113,8 @@ const GAME_CONFIG = {
             metaEmoji: "❤️",
             cantidadFotos: 3,
             extension: ".jpg",
+            tituloEvento: "Desde que te volviste mi novia han pasado:",
+            fechaEvento: "2018-06-14T21:30:00",
             // T=Arriba, B=Abajo, I=Izquierda, D=Derecha | -P=Jugador, -O=Objeto, -E=Enemigo, -M=Meta
             mapa: [
                 //COLUMNA
@@ -136,6 +144,8 @@ const GAME_CONFIG = {
             metaEmoji: "❤️",
             cantidadFotos: 3,
             extension: ".jpg",
+            tituloEvento: "Y finalmente desde que eres mi esposa han pasado:",
+            fechaEvento: "2019-10-15T19:30:00",
             // T=Arriba, B=Abajo, I=Izquierda, D=Derecha | -P=Jugador, -O=Objeto, -E=Enemigo, -M=Meta
             mapa: [
                 //COLUMNA
