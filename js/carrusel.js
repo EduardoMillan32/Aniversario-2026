@@ -72,7 +72,7 @@ btnNextLevel.addEventListener('click', () => {
         startCollageBackground();
         
         // Aquí puedes poner tu fecha oficial de Aniversario para el reloj de la carta
-        startFinalTimer("2023-05-10T14:00:00"); 
+        startFinalTimer("2018-04-27T07:30:00"); 
 
     } else {
         loadLevel(); 

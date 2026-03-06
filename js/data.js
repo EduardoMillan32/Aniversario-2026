@@ -7,7 +7,7 @@ const GAME_CONFIG = {
         "¡Te atraparon! Menos mal que para enamorarme fuiste más rápida. 🥰"
     ],
     niveles: [
-        {
+        /*{
             id: 1,
             itemEmoji: "📱",
             enemigoEmoji: "📅",
@@ -171,7 +171,7 @@ const GAME_CONFIG = {
                 // Fila 10
                 ["IB", "BD",   "B",   "TB",    "BD",    "B",   "TB",   "B",   "BD",    "D-M"]
             ]
-        },
+        },*/
         {
             id: 6,
             itemEmoji: "💍",    

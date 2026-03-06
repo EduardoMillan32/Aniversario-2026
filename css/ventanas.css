@@ -132,10 +132,11 @@ button:active {
 /* --- LA ANIMACIÓN DEL SOBRE / CARTA DESLIZANDO --- */
 .letter-wrapper {
     z-index: 5;
-    width: 90%;
-    max-width: 450px;
-    height: 85vh; /* Ocupa casi toda la pantalla */
+    width: 85%;
+    max-width: 380px;
+    height: 75vh; /* Ocupa casi toda la pantalla */
     animation: slideUpLetter 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    margin: 0 auto;
 }
 
 @keyframes slideUpLetter {
@@ -146,22 +147,20 @@ button:active {
 /* --- EL EFECTO DE PAPEL VIEJO Y QUEMADO --- */
 .vintage-letter {
     background-color: #f4e3c5; /* Color pergamino */
-    /* El truco del borde quemado: sombras internas café oscuro y negro */
     box-shadow: inset 0 0 50px rgba(101, 67, 33, 0.8), 
                 inset 0 0 15px rgba(0,0,0,0.6), 
                 0 15px 30px rgba(0,0,0,0.8);
-    border-radius: 3px 8px 5px 10px; /* Bordes irregulares */
+    border-radius: 3px 8px 5px 10px; 
     width: 100%;
     height: 100%;
-    padding: 30px 20px;
+    padding: 25px 15px;
     display: flex;
     flex-direction: column;
-    
-    /* SCROLL AUTOMÁTICO SI ESCRIBES MUCHO */
     overflow-y: auto; 
     
-    font-family: 'Georgia', serif; /* Letra tipo máquina de escribir/clásica */
-    color: #4a3b32; /* Tinta café oscuro */
+    font-family: 'Apple Chancery', 'URW Chancery L', 'cursive', serif;
+    color: #4a3b32;
+    font-size: 1.05rem;
 }
 
 /* Estilo de la barra de scroll (para que no se vea fea) */
@@ -170,17 +169,19 @@ button:active {
 
 .letter-title {
     text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+    font-family: 'Apple Chancery', 'URW Chancery L', 'cursive', serif;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
     border-bottom: 2px dashed #8b5a2b;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
+    color: #3e2f26;
 }
 
 .letter-content p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
+    line-height: 1.5; 
+    margin-bottom: 12px;
     text-align: justify;
+    text-indent: 15px;
 }
 
 #final-timer-container {
