@@ -89,3 +89,106 @@ button {
 button:active {
     background-color: #ad144b;
 }
+
+/* =========================================
+   PANTALLA FINAL: CARTA ANTIGUA Y COLLAGE
+========================================= */
+#final-screen {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+    overflow: hidden;
+}
+
+/* El fondo negro para que la carta resalte sobre las fotos */
+.overlay-oscuro {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+/* El muro de fotos de fondo */
+#collage-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de fotos */
+    grid-template-rows: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.collage-photo {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Empiezan invisibles */
+    transition: opacity 2s ease-in-out; /* Se desvanecen suavemente */
+}
+
+/* --- LA ANIMACIÓN DEL SOBRE / CARTA DESLIZANDO --- */
+.letter-wrapper {
+    z-index: 5;
+    width: 90%;
+    max-width: 450px;
+    height: 85vh; /* Ocupa casi toda la pantalla */
+    animation: slideUpLetter 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes slideUpLetter {
+    0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* --- EL EFECTO DE PAPEL VIEJO Y QUEMADO --- */
+.vintage-letter {
+    background-color: #f4e3c5; /* Color pergamino */
+    /* El truco del borde quemado: sombras internas café oscuro y negro */
+    box-shadow: inset 0 0 50px rgba(101, 67, 33, 0.8), 
+                inset 0 0 15px rgba(0,0,0,0.6), 
+                0 15px 30px rgba(0,0,0,0.8);
+    border-radius: 3px 8px 5px 10px; /* Bordes irregulares */
+    width: 100%;
+    height: 100%;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    
+    /* SCROLL AUTOMÁTICO SI ESCRIBES MUCHO */
+    overflow-y: auto; 
+    
+    font-family: 'Georgia', serif; /* Letra tipo máquina de escribir/clásica */
+    color: #4a3b32; /* Tinta café oscuro */
+}
+
+/* Estilo de la barra de scroll (para que no se vea fea) */
+.vintage-letter::-webkit-scrollbar { width: 6px; }
+.vintage-letter::-webkit-scrollbar-thumb { background-color: #8b5a2b; border-radius: 10px; }
+
+.letter-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-bottom: 2px dashed #8b5a2b;
+    padding-bottom: 10px;
+}
+
+.letter-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+#final-timer-container {
+    margin-top: auto; /* Lo empuja hasta el final de la carta */
+    padding-top: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(139, 90, 43, 0.3);
+}
+
+.timer-title { font-weight: bold; font-style: italic; margin-bottom: 10px; }
+#final-live-timer { font-size: 1.1rem; font-weight: bold; color: #8b5a2b; }

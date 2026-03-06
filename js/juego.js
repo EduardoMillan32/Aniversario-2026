@@ -57,6 +57,10 @@ function loadLevel(esReintento = false) {
         }
     }
     drawMap(); // Llama a la función que ahora vive en dibujo.js
+    
+    // Iniciar la lluvia de fondo de este nivel ---
+    startEmojiRain();
+    
     enemyInterval = setInterval(moveEnemies, 700); 
 }
 

@@ -64,3 +64,43 @@ function drawMap() {
 
     itemsCounter.textContent = `Recoge los objetos: ${collectedItems}/${totalItems}`;
 }
+
+// --- LÓGICA DE LA LLUVIA DE EMOJIS EN EL FONDO ---
+let rainInterval = null;
+
+function startEmojiRain() {
+    // Si ya estaba lloviendo, lo detenemos para actualizar los emojis
+    if (rainInterval) clearInterval(rainInterval);
+
+    const levelData = GAME_CONFIG.niveles[currentLevelIndex];
+    // Elegimos quiénes van a llover: El ítem a recoger y la meta
+    const emojisToFall = [levelData.itemEmoji, levelData.metaEmoji];
+
+    // Lanzar un nuevo emoji cada 800 milisegundos
+    rainInterval = setInterval(() => {
+        const particle = document.createElement('div');
+        particle.classList.add('falling-emoji');
+        
+        // Elige al azar si cae el objeto o la meta
+        particle.textContent = emojisToFall[Math.floor(Math.random() * emojisToFall.length)];
+        
+        // Posición horizontal al azar
+        particle.style.left = Math.random() * 100 + 'vw';
+        
+        // Velocidad de caída al azar 
+        const duration = Math.random() * 3 + 4;
+        particle.style.animationDuration = duration + 's';
+        
+        // Tamaño al azar 
+        const size = Math.random() * 1.5 + 1; // Tamaño entre 1 y 2.5rem
+        particle.style.fontSize = size + 'rem';
+
+        // Lo agregamos a la pantalla
+        document.body.appendChild(particle);
+
+        setTimeout(() => {
+            particle.remove();
+        }, duration * 1000);
+
+    }, 800); // Puedes bajar a 500 si quieres que llueva más tupido, o subir a 1000 si quieres menos
+}

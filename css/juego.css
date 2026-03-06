@@ -117,3 +117,30 @@ h2 {
     transform: translateY(4px);
     box-shadow: none; 
 }
+
+/* =========================================
+   LLUVIA DE EMOJIS (FONDO DINÁMICO)
+========================================= */
+.falling-emoji {
+    position: fixed;
+    top: -10vh; /* Empieza un poco arriba del borde de la pantalla */
+    z-index: -1; /* ¡Súper importante! Se queda por detrás del cuadro del laberinto */
+    pointer-events: none; /* Evita que estorben si tu esposa toca la pantalla ahí */
+    user-select: none;
+    animation: fallAndFade linear forwards;
+}
+
+/* Las instrucciones de cómo debe caer y desaparecer */
+@keyframes fallAndFade {
+    0% {
+        transform: translateY(0) rotate(0deg); /* Inicia arriba */
+        opacity: 1; /* Totalmente visible */
+    }
+    75% {
+        opacity: 1; /* Se mantiene visible hasta el 75% del camino */
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg); /* Cae hasta abajo y gira un poco */
+        opacity: 0; /* Se desvanece por completo */
+    }
+}

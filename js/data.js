@@ -9,8 +9,8 @@ const GAME_CONFIG = {
     niveles: [
         {
             id: 1,
-            itemEmoji: "☕",
-            enemigoEmoji: "🚦",
+            itemEmoji: "📱",
+            enemigoEmoji: "📅",
             metaEmoji: "❤️",
             cantidadFotos: 3,
             extension: ".jpg",
@@ -40,8 +40,8 @@ const GAME_CONFIG = {
         },
         {
             id: 2,
-            itemEmoji: "☕",    
-            enemigoEmoji: "🚦", 
+            itemEmoji: "🍣",    
+            enemigoEmoji: "⏰", 
             metaEmoji: "❤️",
             cantidadFotos: 3,
             extension: ".jpg",
@@ -75,8 +75,8 @@ const GAME_CONFIG = {
         },
         {
             id: 3,
-            itemEmoji: "☕",    
-            enemigoEmoji: "🚦", 
+            itemEmoji: "💋",    
+            enemigoEmoji: "🙈", 
             metaEmoji: "❤️",
             cantidadFotos: 3,
             extension: ".jpg",
@@ -108,8 +108,8 @@ const GAME_CONFIG = {
         },
         {
             id: 4,
-            itemEmoji: "☕",    
-            enemigoEmoji: "🚦", 
+            itemEmoji: "🎈",    
+            enemigoEmoji: "🩹", 
             metaEmoji: "❤️",
             cantidadFotos: 3,
             extension: ".jpg",
@@ -139,13 +139,13 @@ const GAME_CONFIG = {
         },
         {
             id: 5,
-            itemEmoji: "☕",    
-            enemigoEmoji: "🚦", 
+            itemEmoji: "🍂",    
+            enemigoEmoji: "🎒", 
             metaEmoji: "❤️",
             cantidadFotos: 3,
             extension: ".jpg",
-            tituloEvento: "Y finalmente desde que eres mi esposa han pasado:",
-            fechaEvento: "2019-10-15T19:30:00",
+            tituloEvento: "Deste tu primer te amo han pasado:",
+            fechaEvento: "2018-07-31T19:00:00",
             // T=Arriba, B=Abajo, I=Izquierda, D=Derecha | -P=Jugador, -O=Objeto, -E=Enemigo, -M=Meta
             mapa: [
                 //COLUMNA
@@ -170,6 +170,43 @@ const GAME_CONFIG = {
                 ["ID",  "T",    "T",   "IT",    "TD",   "T",    "D",    "TD",   "D",    "D"],
                 // Fila 10
                 ["IB", "BD",   "B",   "TB",    "BD",    "B",   "TB",   "B",   "BD",    "D-M"]
+            ]
+        },
+        {
+            id: 6,
+            itemEmoji: "💍",    
+            enemigoEmoji: "⏳", 
+            metaEmoji: "❤️",
+            cantidadFotos: 3,
+            extension: ".jpg",
+            tituloEvento: "Y finalmente desde nuestra boda han pasado:",
+            fechaEvento: "2023-04-22T19:30:00",
+            // T=Arriba, B=Abajo, I=Izquierda, D=Derecha | -P=Jugador, -O=Objeto, -E=Enemigo, -M=Meta
+            mapa: [
+                //COLUMNA
+                // 1     2       3       4       5       6       7       8      9       10       11
+                // Fila 1
+                ["T-P", "T",    "TD",   "T",    "T",    "T",    "T",    "T",   "IT",    "T",    "TD"],
+                // Fila     
+                ["IT",  "D",    "T",    "D",    "T",    "IT",    "D",    " ",    "T",    "T",    "D"],
+                // Fila 3
+                ["I",   "TD",   "D",    "T",    " ",    "I",    "T",    "T",    "T",    "T",    "TD"],
+                // Fila 4
+                ["IT",  "D",    "D",    "D",    " ",    "TD",   "T",    "T",    "T",    "TD",   "D"],
+                // Fila 5
+                ["I",   "T",    "D",    "D",    "TD",   "D",    " ",    "IT",   "D",    "T",    "D"],
+                // Fila 6
+                ["I",   "IT",   "T",    "D",    "D",    "D",    " ",    "ID",   "T",    "D",    "D"],
+                // Fila 7
+                ["I",   "T",    "D",    "T",    "D",    "D",    " ",    "IT",   "D",    "TD",   "D"],
+                // Fila 8
+                ["IT",  "TD",   "T",    "D",    "T",    "D",    " ",    "I",    "IT",   " ",    "D"],
+                // Fila 9
+                ["ID",  "D",    " ",    "T",    " ",    "T",    " ",    "I",    "ID",   "TD",   "TD"],
+                // Fila 10
+                ["D-M", "D",    "T",    "T",    "ID",   "T",    "T",    "I",    "TD",   "D",    "D"],
+                // Fila 11
+                ["ITB", "B",    "BD",   "B",    "TB",   "BD",   "B",    "TB",   "BD",   "B",    "BD"]
             ]
         }
     ]
