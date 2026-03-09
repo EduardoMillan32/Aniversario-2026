@@ -44,21 +44,33 @@ function loadLevel(esReintento = false) {
             }
             if (mapaOriginal[y][x].includes('-E')) {
                 if (!mapArray[y][x].includes('-E')) mapArray[y][x] += '-E';
-                let dx = 0, dy = 0;
-                let cell = mapaOriginal[y][x];
                 
-                if (!cell.includes('D')) dx = 1; 
-                else if (!cell.includes('I')) dx = -1;
-                else if (!cell.includes('B')) dy = 1; 
-                else dy = -1; 
+                let dx = 0, dy = 0;
+                let mapHeight = mapaOriginal.length;
+                let mapWidth = mapaOriginal[0].length;
+                
+                let paredDer = mapaOriginal[y][x].includes('D') || x === mapWidth - 1 || (x < mapWidth - 1 && mapaOriginal[y][x+1].includes('I'));
+                let paredIzq = mapaOriginal[y][x].includes('I') || x === 0 || (x > 0 && mapaOriginal[y][x-1].includes('D'));
+                let paredAba = mapaOriginal[y][x].includes('B') || y === mapHeight - 1 || (y < mapHeight - 1 && (mapaOriginal[y+1][x].includes('A') || mapaOriginal[y+1][x].includes('T')));
+                let paredArr = mapaOriginal[y][x].includes('A') || mapaOriginal[y][x].includes('T') || y === 0 || (y > 0 && mapaOriginal[y-1][x].includes('B'));
+
+                if (paredDer && paredIzq) { 
+                    dy = (!paredAba) ? 1 : -1; 
+                } else if (paredArr && paredAba) { 
+                    dx = (!paredDer) ? 1 : -1; 
+                } else {
+                    if (!paredDer) dx = 1;
+                    else if (!paredAba) dy = 1;
+                    else if (!paredIzq) dx = -1;
+                    else dy = -1;
+                }
 
                 enemies.push({ x: x, y: y, dx: dx, dy: dy });
             }
         }
     }
-    drawMap(); // Llama a la función que ahora vive en dibujo.js
+    drawMap(); 
     
-    // Iniciar la lluvia de fondo de este nivel ---
     startEmojiRain();
     
     enemyInterval = setInterval(moveEnemies, 700); 
@@ -110,40 +122,72 @@ function movePlayer(dx, dy) {
 }
 
 function moveEnemies() {
-    for (let i = 0; i < enemies.length; i++) {
-        let enemy = enemies[i];
-        let currentCell = mapArray[enemy.y][enemy.x];
-        let nextX = enemy.x + enemy.dx;
-        let nextY = enemy.y + enemy.dy;
+    const mapaOriginal = GAME_CONFIG.niveles[currentLevelIndex].mapa;
+    
+    let mapHeight = mapaOriginal.length;
+    let mapWidth = mapaOriginal[0].length;
+
+    enemies.forEach(enemy => {
+        let currX = enemy.x;
+        let currY = enemy.y;
+        
+        // Calculamos a dónde se quiere mover
+        let nextX = currX + enemy.dx;
+        let nextY = currY + enemy.dy;
+
         let hitWall = false;
 
-        if (nextX < 0 || nextY < 0 || nextY >= mapArray.length || nextX >= mapArray[0].length) {
+        if (nextX < 0 || nextX >= mapWidth || nextY < 0 || nextY >= mapHeight) {
             hitWall = true;
         } else {
-            let nextCell = mapArray[nextY][nextX];
-            
-            if (enemy.dx === 1 && (currentCell.includes('D') || nextCell.includes('I'))) hitWall = true;
-            if (enemy.dx === -1 && (currentCell.includes('I') || nextCell.includes('D'))) hitWall = true;
-            if (enemy.dy === 1 && (currentCell.includes('B') || nextCell.includes('T'))) hitWall = true;
-            if (enemy.dy === -1 && (currentCell.includes('T') || nextCell.includes('B'))) hitWall = true;
-            
-            if (nextCell.includes('-M') || nextCell.includes('-O')) hitWall = true; 
+            let cellCurrent = mapaOriginal[currY][currX] || "";
+            let cellTarget = mapaOriginal[nextY][nextX] || "";
+
+            if (enemy.dx === 1 && (cellCurrent.includes('D') || cellTarget.includes('I'))) hitWall = true;
+            if (enemy.dx === -1 && (cellCurrent.includes('I') || cellTarget.includes('D'))) hitWall = true;
+            if (enemy.dy === 1 && (cellCurrent.includes('B') || cellTarget.includes('A') || cellTarget.includes('T'))) hitWall = true;
+            if (enemy.dy === -1 && (cellCurrent.includes('A') || cellCurrent.includes('T') || cellTarget.includes('B'))) hitWall = true;
         }
 
         if (hitWall) {
             enemy.dx = -enemy.dx;
             enemy.dy = -enemy.dy;
-            continue; 
+            
+            nextX = currX + enemy.dx;
+            nextY = currY + enemy.dy;
+            
+            let trapped = false;
+            if (nextX < 0 || nextX >= mapWidth || nextY < 0 || nextY >= mapHeight) {
+                trapped = true;
+            } else {
+                let cellCurrent = mapaOriginal[currY][currX] || "";
+                let cellTarget = mapaOriginal[nextY][nextX] || "";
+                if (enemy.dx === 1 && (cellCurrent.includes('D') || cellTarget.includes('I'))) trapped = true;
+                if (enemy.dx === -1 && (cellCurrent.includes('I') || cellTarget.includes('D'))) trapped = true;
+                if (enemy.dy === 1 && (cellCurrent.includes('B') || cellTarget.includes('A') || cellTarget.includes('T'))) trapped = true;
+                if (enemy.dy === -1 && (cellCurrent.includes('A') || cellCurrent.includes('T') || cellTarget.includes('B'))) trapped = true;
+            }
+            
+            if (trapped) {
+                nextX = currX;
+                nextY = currY;
+            }
         }
 
-        mapArray[enemy.y][enemy.x] = mapArray[enemy.y][enemy.x].replace('-E', '');
-        mapArray[nextY][nextX] = mapArray[nextY][nextX] + '-E';
+        mapArray[currY][currX] = mapArray[currY][currX].replace('-E', '');
+        
         enemy.x = nextX;
         enemy.y = nextY;
+        
+        mapArray[enemy.y][enemy.x] += '-E';
 
-        if (enemy.x === playerPos.x && enemy.y === playerPos.y) { die(); return; }
-    }
-    drawMap();
+        if (playerPos.x === enemy.x && playerPos.y === enemy.y) {
+            die(); 
+            return;
+        }
+    });
+    
+    drawMap(); 
 }
 
 function die() {
@@ -188,6 +232,24 @@ document.addEventListener('keydown', (e) => {
         case 'ArrowLeft': case 'a': case 'A': movePlayer(-1, 0); break;
         case 'ArrowRight': case 'd': case 'D': movePlayer(1, 0); break;
     }
+});
+
+
+// ==========================================
+// INICIO DEL JUEGO (BOTÓN DE LA PANTALLA INICIAL)
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    const btnStart = document.getElementById('btn-start-game');
+    const startScreen = document.getElementById('start-screen');
+    const gameScreen = document.getElementById('game-screen');
+
+    btnStart.addEventListener('click', () => {
+        startScreen.classList.add('hidden');
+        
+        gameScreen.classList.remove('hidden');
+        
+        loadLevel();
+    });
 });
 
 // INICIAR EL JUEGO AL CARGAR

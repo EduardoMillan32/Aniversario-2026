@@ -1,83 +1,211 @@
 /* =========================================
-   LA MAGIA DEL SOBRE Y LA CARTA ANIMADA
+   EL SOBRE Y LA CARTA ANIMADA
 ========================================= */
 
 /* 1. El contenedor del sobre (Sube desde abajo) */
 .envelope-container {
-    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
-    width: 300px; height: 200px; z-index: 10;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 200px;
+    z-index: 10;
     animation: enterEnvelope 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 /* 2. Las texturas y dobleces del sobre */
 .envelope-back {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background-color: #8b5a2b; border-radius: 5px; z-index: 1;
-    animation: fadeOutEnvelope 1s 6s forwards; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #8b5a2b;
+    border-radius: 5px;
+    z-index: 1;
+    animation: fadeOutEnvelope 1s 6s forwards;
 }
 
 .envelope-front {
-    position: absolute; bottom: 0; left: 0; width: 0; height: 0;
-    border-left: 150px solid #c98a4b; border-right: 150px solid #c98a4b;
-    border-bottom: 110px solid #d89a59; border-top: 90px solid transparent;
-    z-index: 3; animation: fadeOutEnvelope 1s 6s forwards;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 150px solid #c98a4b;
+    border-right: 150px solid #c98a4b;
+    border-bottom: 110px solid #d89a59;
+    border-top: 90px solid transparent;
+    z-index: 3;
+    animation: fadeOutEnvelope 1s 6s forwards;
 }
 
 .envelope-flap {
-    position: absolute; top: 0; left: 0; width: 0; height: 0;
-    border-left: 150px solid transparent; border-right: 150px solid transparent;
-    border-top: 110px solid #a8723f; z-index: 4; transform-origin: top;
-    animation: openFlap 1s 2s forwards, fadeOutEnvelope 1s 6s forwards; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 110px solid #a8723f;
+    z-index: 4;
+    transform-origin: top;
+    animation: openFlap 1s 2s forwards, fadeOutEnvelope 1s 6s forwards;
 }
 
 /* 3. La Carta Oculta */
 .letter-wrapper {
-    position: absolute; left: 50%; top: 10px; width: 280px; height: 180px; 
-    z-index: 2; opacity: 0; animation: extractLetter 3.5s 3.2s forwards; 
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    width: 280px;
+    height: 180px;
+    z-index: 2;
+    opacity: 0;
+    animation: extractLetter 3.5s 3.2s forwards;
+    
 }
 
 /* 4. Papel quemado y Textos */
 .vintage-letter {
-    overflow-y: hidden; animation: enableScroll 0.1s 7s forwards; 
-    background-color: #f4e3c5; 
+    overflow-y: hidden;
+    animation: enableScroll 0.1s 7s forwards;
+    background-color: #f4e3c5;
     box-shadow: inset 0 0 50px rgba(101, 67, 33, 0.8), inset 0 0 15px rgba(0,0,0,0.6), 0 15px 30px rgba(0,0,0,0.8);
-    border-radius: 3px 8px 5px 10px; width: 100%; height: 100%;
-    padding: 25px 15px; display: flex; flex-direction: column;
-    font-family: 'Dancing Script', cursive; color: #4a3b32; font-size: 1.4rem; 
+    border-radius: 3px 8px 5px 10px;
+    width: 100%;
+    height: 100%;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Dancing Script', cursive;
+    color: #4a3b32;
+    font-size: 1.4rem;
 }
 
-.vintage-letter::-webkit-scrollbar { width: 6px; }
-.vintage-letter::-webkit-scrollbar-thumb { background-color: #8b5a2b; border-radius: 10px; }
+.vintage-letter::-webkit-scrollbar { 
+    width: 6px;
+}
+.vintage-letter::-webkit-scrollbar-thumb { 
+    background-color: #8b5a2b;
+    border-radius: 10px;
+}
 
 .letter-title {
-    text-align: center; font-family: 'Dancing Script', cursive; font-weight: 700;
-    font-size: 2rem; margin-bottom: 15px; border-bottom: 2px dashed #8b5a2b;
-    padding-bottom: 8px; color: #3e2f26;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    border-bottom: 2px dashed #8b5a2b;
+    padding-bottom: 8px;
+    color: #3e2f26;
 }
 
 .letter-content p {
-    font-family: 'Dancing Script', cursive; font-size: 1.4rem; line-height: 1.4; 
-    margin-bottom: 12px; text-align: left; text-indent: 15px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    text-align: left;
+    text-indent: 15px;
 }
 
 #final-timer-container {
-    margin-top: auto; padding-top: 20px; text-align: center;
+    margin-top: auto;
+    padding-top: 20px;
+    text-align: center;
     border-top: 1px solid rgba(139, 90, 43, 0.3);
 }
 
-.timer-title { font-weight: bold; font-style: italic; margin-bottom: 10px; }
-#final-live-timer { font-size: 1.1rem; font-weight: bold; color: #8b5a2b; }
+.timer-title { 
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+#final-live-timer { 
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #8b5a2b;
+}
 
 /* --- LA SINFONÍA DE ANIMACIONES --- */
-@keyframes enterEnvelope { 0% { transform: translate(-50%, 150vh); } 100% { transform: translate(-50%, -50%); } }
-@keyframes openFlap { 0% { transform: rotateX(0deg); z-index: 4; } 50% { transform: rotateX(90deg); z-index: 4; } 51% { z-index: 1; } 100% { transform: rotateX(180deg); z-index: 1; } }
-@keyframes fadeOutEnvelope { to { opacity: 0; visibility: hidden; } }
-@keyframes enableScroll { to { overflow-y: auto; } }
+@keyframes enterEnvelope { 
+    0% { 
+        transform: translate(-50%, 150vh);
+    } 
+    100% { 
+        transform: translate(-50%, -50%);
+    } 
+}
+@keyframes openFlap { 
+    0% { 
+        transform: rotateX(0deg);
+        z-index: 4;
+    } 
+    50% { 
+        transform: rotateX(90deg);
+        z-index: 4;
+    } 
+    51% { 
+        z-index: 1;
+    } 
+    100% { 
+        transform: rotateX(180deg);
+        z-index: 1;
+    } 
+}
+
+@keyframes fadeOutEnvelope { 
+    to { 
+        opacity: 0;
+        visibility: hidden;
+    } 
+}
+@keyframes enableScroll { 
+    to { 
+        overflow-y: auto;
+    } 
+}
 
 @keyframes extractLetter {
-    0% { transform: translate(-50%, 0); width: 280px; max-width: 280px; height: 180px; z-index: 2; opacity: 0; }
-    10% { opacity: 1; }
-    35% { transform: translate(-50%, -180px); width: 280px; max-width: 280px; height: 180px; z-index: 5; opacity: 1; }
-    50% { transform: translate(-50%, -180px); width: 280px; max-width: 280px; height: 180px; z-index: 5; opacity: 1; }
-    100% { transform: translate(-50%, -50%); top: 50%; width: 70vw; max-width: 400px; height: 60vh; z-index: 100; opacity: 1; }
+    0% { 
+        transform: translate(-50%, 0);
+        width: 280px;
+        max-width: 280px;
+        height: 180px;
+        z-index: 2;
+        opacity: 0;
+    }
+    10% { 
+        opacity: 1;
+    }
+    35% { 
+        transform: translate(-50%, -180px);
+        width: 280px;
+        max-width: 280px;
+        height: 180px;
+        z-index: 5;
+        opacity: 1;
+    }
+    50% { 
+        transform: translate(-50%, -180px);
+        width: 280px;
+        max-width: 280px;
+        height: 180px;
+        z-index: 5;
+        opacity: 1;
+    }
+    100% { 
+        transform: translate(-50%, -50%);
+        top: 50%;
+        width: 70vw;
+        max-width: 400px;
+        height: 60vh;
+        z-index: 100;
+        opacity: 1;
+    }
 }

@@ -2,12 +2,14 @@
 
 const GAME_CONFIG = {
     Derrota: [
-        "¡Uy! Más lenta que el internet de los 90s. 😂 ¡Vas de nuevo!",
-        "¿Esos son tus reflejos? Con razón siempre te gano. 🐢",
-        "¡Te atraparon! Menos mal que para enamorarme fuiste más rápida. 🥰"
+        "Si no puedes con esto como dices que eres la mejor en COD 🎮👀🤭",
+        "¿Y asi te haces llamar Thorn Princess? Con razón siempre te gano. 😂",
+        "Si ocupas ayuda me lo puedes pedir 🙋‍♂️, no todos son buenos en los juegos jajaja",
+        "Oye y si empezamos a hacer apuestas 🤝💸, creo que puedo ganar mucho con esto 👀",
+        "Con razon no la armas en el secuence 🃏🔴🔵🤷‍♂️"
     ],
     niveles: [
-        /*{
+        {
             id: 1,
             itemEmoji: "📱",
             enemigoEmoji: "📅",
@@ -19,23 +21,23 @@ const GAME_CONFIG = {
             // T=Arriba, B=Abajo, I=Izquierda, D=Derecha | -P=Jugador, -O=Objeto, -E=Enemigo, -M=Meta
             mapa: [
                 //COLUMNA
-                // 1         2       3       4       5       6       7       8
+                // 1         2           3       4       5       6       7       8
                 // Fila 1
-                ["TI",      "T",    "TD",   "T",    "T",    "T",    "T",    "TD"],
+                ["TI",      "T",        "TD",   "T",    "T",    "T",    "T",    "TD"],
                 // Fila 2
-                ["BD-P",    " ",    "T",    "T",    "I",    "TD",   "D",    "D-O"],
+                ["BD-P",    " ",        "T",    "T",    "I",    "TD",   "D",    "D-O"],
                 // Fila 3
-                ["I",       " ",    "TD",   " ",    "T",    "D",    "T",    "D"],
+                ["I",       " ",        "TD",   " ",    "T",    "D",    "T",    "D"],
                 // Fila 4
-                ["ID",      "T",    "T",    " ",    "T",    "T",    " ",    "TD-E"],
+                ["ID",      "T",        "T",    " ",    "T",    "T",    " -E",  "TD"],
                 // Fila 5
-                ["IT",      " ",    "ID",   "T",    "T",    "ID",   "T",    "D"],
+                ["IT",      " -E",      "ID",   "T",    "T-O",  "ID",   "T",    "D"],
                 // Fila 6
-                ["ID",      " ",    "T",    "D",    "T",    "I",    "D",    "TD"],
+                ["ID",      " ",        "T",    "D",    "T-E",  "I",    "D",    "TD"],
                 // Fila 7
-                ["IT",      " ",    "T",    "ID",   " ",    "T",    "T",    "-M"],
+                ["IT",      " ",        "T",    "ID",   " ",    "T",    "T",    "-M"],
                 // Fila 8
-                ["IB",      "TDB",  "B",    "TB",   "BD",   "BD",   "TB",   "BD"]
+                ["IB",      "TDB-O",    "B",    "TB",   "BD",   "BD",   "TB",   "BD"]
             ]
         },
         {
@@ -50,27 +52,27 @@ const GAME_CONFIG = {
             // T=Arriba, B=Abajo, I=Izquierda, D=Derecha | -P=Jugador, -O=Objeto, -E=Enemigo, -M=Meta
             mapa: [
                 //COLUMNA
-                // 1     2       3       4       5       6       7       8      9       10
+                // 1         2       3       4       5       6       7       8      9       10
                 // Fila 1
-                ["IT",  "T",    "T",    "TI",   "T",    "IT",   "T",    "TI",   "T",    "T-M"],
+                ["IT-E",    "T",    "T",    "TI",   "T",    "IT",   "T",    "TI",   "T",    "T-M"],
                 // Fila     
-                ["IT",  "I",    "I",    "T",    "I",    " ",     "I",    "T",    "T",    "D"],
+                ["IT-O",    "I",    "I",    "T",    "I",    " ",    "I",    "T",    "T",    "D"],
                 // Fila 3
-                ["I",   "I",    "T",    "I",    "D",    "T",    "T",    "IT",   "D",    "TD"],
+                ["I",       "I",    "T",    "I",    "D",    "T",    "T-O",  "IT",   "D",    "TD-O"],
                 // Fila 4
-                ["I",   "T",    "I",    "T",    "TD",   "D",    "T",    "T",    "IT",   "D"],
+                ["I",       "T",    "I",    "T",    "TD",   "D",    "T",    "T",    "IT",   "D"],
                 // Fila 5
-                ["I",   "IT",   "T",    " ",     "IT",   "D",    "D",    " ",     "T",    "D"],
+                ["I",       "IT",   "T",    " ",    "IT",   "D",    "D",    " ",    "T",    "D"],
                 // Fila 6
-                ["I",   "I",    "T",    "IT",   "I",    "T",    "D",    "D",    " ",     "ITD"],
+                ["I",       "I",    "T",    "IT",   "I",    "T",    "D",    "D",    " -E",  "ITD"],
                 // Fila 7
-                ["I-E",   "T",    " ",     " ",     "T",    " ",     "T",    "D",    " ",     "ID"],
+                ["I-E",     "T",    " ",    " ",    "T",    " ",    "T",    "D",    " ",    "ID"],
                 // Fila 8
-                ["IT",  "T",    " ",     "I",    "IT",   "I",    "IT",   "T",    " ",     "D"],
+                ["IT",      "T",    " ",    "I",    "IT",   "I",    "IT",   "T",    " ",    "D"],
                 // Fila 9
-                ["I",   "IT",   " ",     " ",     "I",    " ",     " ",     "ID",   "T",    "TD"],
+                ["I",       "IT",   " ",    " ",    "I",    " ",    " ",    "ID",   "T",    "TD"],
                 // Fila 10
-                ["B-P", "TB",   "TB",   "B",    "B",    "TB",   "IB",   "TB",   "B",    "IBD"]
+                ["B-P",     "TB",   "TB",   "B",    "B",    "TB",   "IB",   "TB",   "B",    "IBD"]
             ]
         },
         {
@@ -85,25 +87,25 @@ const GAME_CONFIG = {
             // T=Arriba, B=Abajo, I=Izquierda, D=Derecha | -P=Jugador, -O=Objeto, -E=Enemigo, -M=Meta
             mapa: [
                 //COLUMNA
-                // 1         2       3       4       5       6       7       8      9
+                // 1     2       3       4       5       6       7       8      9
                 // Fila 1
-                ["IT",      "IT",    "T",   "T",    "TD",    "T",   "IT",   "T",    "TD"],
+                ["IT",  "IT",    "T",   "T",    "TD-O", "T",    "IT",   "T",    "TD"],
                 // Fila     
-                ["I",       "I",    "IT",   "T",    "T",    " ",     "I",     "T",   "T-M"],
+                ["I",   "I",    "IT",   "T",    "T",    " ",    "I",    "T",    "T-M"],
                 // Fila 3
-                ["I",       " ",     " ",     "I",    "ID",    "T",   "T",    " ",     "TD"],
+                ["I",   " ",     " ",   "I",    "ID",   "T",    "T",    " ",    "TD"],
                 // Fila 4
-                ["ID",      " ",     "IT",   "I-E",    "T",    " ",     "T",    "IT",   "D"],
+                ["ID",  " -E",  "IT",   "I-E",  "T",    " ",    "T",    "IT",   "D"],
                 // Fila 5
-                ["IT",      " ",     " ",     "IT",   "T",    " ",     "I",    "I",    "ID"],
+                ["IT",  " ",     " ",   "IT",   "T",    " ",    "I",    "I",    "ID"],
                 // Fila 6
-                ["I",       "IT-E",   "I",   "T",    "IT",    "T",    "I",    "I",     "TD"],
+                ["I",   "IT",   "I",    "T",    "IT",   "T",    "I",    "I",    "TD"],
                 // Fila 7
-                ["I",       " ",     "T",    "I",    " ",     "T",    "I",    "T",     "TD"],
+                ["I",   " ",     "T",   "I",    " -E",  "T",    "I",    "T",    "TD"],
                 // Fila 8
-                ["T-P",    "T",    "IT",    "T",    "D",     "T",   "I",    "IT",    "TD"],
+                ["T-P", "T",    "IT",   "T",    "D",    "T-O",  "I",    "IT-O", "TD"],
                 // Fila 9
-                ["ITB",     "B",    "B",    "TB",   "TB",   "B",    "IB",   "TB",    "BD"]
+                ["ITB", "B",    "B",    "TB",   "TB",   "B",    "IB",   "TB",   "BD"]
             ]
         },
         {
@@ -118,23 +120,23 @@ const GAME_CONFIG = {
             // T=Arriba, B=Abajo, I=Izquierda, D=Derecha | -P=Jugador, -O=Objeto, -E=Enemigo, -M=Meta
             mapa: [
                 //COLUMNA
-                // 1         2       3       4       5        6           7       8
+                // 1         2       3       4       5        6      7       8
                 // Fila 1
-                ["TI",      "T",    "T",    "T",    "T",    "I-M",     "IT",   "TD"],
+                ["TI",      "T",    "T",    "T",    "T",    "I-M",  "IT",   "TD"],
                 // Fila 2
-                ["I",       "T",    "ITD",   " ",    "T",    "I",        "D",     "D"],
+                ["I",       "T",    "ITD",  " ",    "T",    "I",    "D",    "D"],
                 // Fila 3
-                ["T-P",    "I",     "D",     "T",    " ",    "IT",       "T",    "D"],
+                ["T-P",     "I-E",  "D",    "T",    " ",    "IT",   "T",    "D"],
                 // Fila 4
-                ["I",       "D",    "T",    " ",     "I",    "I",        "TD",    "TD"],
+                ["I",       "D",    "T",    " ",    "I-O",  "I",    "TD",   "TD-O"],
                 // Fila 5
-                ["IT",      "T",    "D",     "T",    "T",    "T",        "D",     "D"],
+                ["IT",      "T",    "D",    "T",    "T",    "T",    "D",    "D"],
                 // Fila 6
-                ["I",      "T",     "TD",    " ",    "IT",    "T",    "T",    "D"],
+                ["I",       "T",    "TD",   " ",    "IT",   "T",    "T",    "D"],
                 // Fila 7
-                ["I",      "IT",     "D",    " ",   "IT",     "T",    "T",    "D"],
+                ["I",       "IT",   "D",    " ",    "IT",   "T",    "T",    "D"],
                 // Fila 8
-                ["IB",      "IB",  "TB",    "B",   "B",   "ITB",   "TB",   "BD"]
+                ["IB-O",    "IB-E", "TB",   "B",    "B",    "ITB",  "TB",   "BD"]
             ]
         },
         {
@@ -151,27 +153,27 @@ const GAME_CONFIG = {
                 //COLUMNA
                 // 1     2       3       4       5       6       7       8      9       10
                 // Fila 1
-                ["I-P", "TD",   "T",    "T",    "T",    "T",    "T",   "IT",   "T",    "TD"],
+                ["I-P", "TD",   "T",    "T",    "T",    "T-E",  "T",   "IT",    "T",    "TD"],
                 // Fila     
                 ["ITD", "D",    "D",    " ",    "I",    "TD",   "",    "ID",    "D",    "D"],
                 // Fila 3
                 ["I",   "D",    "D",    " ",    "T",   "ID",    " ",    "T",    "D",    "D"],
                 // Fila 4
-                ["I",  "ID",    "T",    "TD",    "",   "ID",    "T",    "T",    "TD",   "D"],
+                ["I",  "ID",    "T",    "TD",    "",   "ID",    "T",    "T",    "TD-O", "D-E"],
                 // Fila 5
-                ["I",   "T",    "D",    "D",    "",    "ID",    "D",    "T",    "T",    "D"],
+                ["I",   "T",    "D",    "D",    "",     "ID",   "D",    "T",    "T",    "D"],
                 // Fila 6
-                ["IT",  "T",    "T",    "D",    "",    "I",    "D",    "D",    "TD",   "D"],
+                ["IT",  "T",    "T-E",  "D",    "",     "I",    "D",    "D",    "TD-O", "D"],
                 // Fila 7
-                ["ID",  " ",    "IT",    "D",    " ",    "TD",   "T",    "D",    " ",    "D"],
+                ["ID",  " ",    "IT",    "D",   " ",    "TD",   "T",    "D",    " ",    "D"],
                 // Fila 8
-                ["ID",  " ",    "T",    "T",    "D",    "D",    "D",    "T",    "T ",   "TD"],
+                ["ID",  " ",    "T",    "T",    "D",    "D",    "D",    "T",    "T",    "TD"],
                 // Fila 9
-                ["ID",  "T",    "T",   "IT",    "TD",   "T",    "D",    "TD",   "D",    "D"],
+                ["ID",  "T",    "T",    "IT-O", "TD",   "T",    "D",    "TD",   "D",    "D"],
                 // Fila 10
-                ["IB", "BD",   "B",   "TB",    "BD",    "B",   "TB",   "B",   "BD",    "D-M"]
+                ["IB",  "BD",   "B",    "TB",   "BD",   "B",    "TB",   "B",    "BD",   "D-M"]
             ]
-        },*/
+        },
         {
             id: 6,
             itemEmoji: "💍",    
@@ -186,23 +188,23 @@ const GAME_CONFIG = {
                 //COLUMNA
                 // 1     2       3       4       5       6       7       8      9       10       11
                 // Fila 1
-                ["T-P", "T",    "TD",   "T",    "T",    "T",    "T",    "T",   "IT",    "T",    "TD"],
+                ["T-P", "T",    "TD",   "T",    "T",    "T",    "T",    "T",   "IT-O",  "T",    "TD"],
                 // Fila     
-                ["IT",  "D",    "T",    "D",    "T",    "IT",    "D",    " ",    "T",    "T",    "D"],
+                ["IT",  "D",    "T",    "D",    "T",    "IT",   "D",    " ",    "T",    "T",    "D"],
                 // Fila 3
                 ["I",   "TD",   "D",    "T",    " ",    "I",    "T",    "T",    "T",    "T",    "TD"],
                 // Fila 4
                 ["IT",  "D",    "D",    "D",    " ",    "TD",   "T",    "T",    "T",    "TD",   "D"],
                 // Fila 5
-                ["I",   "T",    "D",    "D",    "TD",   "D",    " ",    "IT",   "D",    "T",    "D"],
+                ["I",   "T",    "D",    "D",    "TD-O", "D",    " ",    "IT",   "D",    "T",    "D"],
                 // Fila 6
-                ["I",   "IT",   "T",    "D",    "D",    "D",    " ",    "ID",   "T",    "D",    "D"],
+                ["I-E", "IT",   "T",    "D",    "D",    "D",    " ",    "ID",   "T",    "D",    "D"],
                 // Fila 7
                 ["I",   "T",    "D",    "T",    "D",    "D",    " ",    "IT",   "D",    "TD",   "D"],
                 // Fila 8
-                ["IT",  "TD",   "T",    "D",    "T",    "D",    " ",    "I",    "IT",   " ",    "D"],
+                ["IT",  "TD",   "T",    "D",    "T",    "D",    " ",    "I",    "IT",   " ",    "D-E"],
                 // Fila 9
-                ["ID",  "D",    " ",    "T",    " ",    "T",    " ",    "I",    "ID",   "TD",   "TD"],
+                ["ID",  "D",    " -E",  "T",    " ",    "T",    " ",    "I",    "ID",   "D",    "TD-O"],
                 // Fila 10
                 ["D-M", "D",    "T",    "T",    "ID",   "T",    "T",    "I",    "TD",   "D",    "D"],
                 // Fila 11
