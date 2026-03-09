@@ -84,57 +84,82 @@ h2 {
 }
 
 /* =========================================
-   DISEÑO DE LOS BOTONES DE MOVIMIENTO
+   CONTROLES (ESTILO CRISTAL ELEGANTE CENTRADO)
 ========================================= */
 
-/* Contenedor en forma de cruz */
+/* 1. La cuadrícula centrada a la fuerza en la pantalla */
 .controls-container {
     display: grid;
-    grid-template-areas:
-        ". up ."
-        "left . right"
-        ". down .";
-    gap: 12px; /* Separación entre botones */
-    justify-content: center;
+    grid-template-columns: 60px 60px 60px; 
+    grid-template-rows: 60px 60px 60px;    
+    gap: 10px; 
+    
+    /* EL SECRETO PARA CENTRAR LA CRUZ EN LA PANTALLA 👇 */
+    width: 100%; 
+    justify-content: center; 
+    align-content: center;
     margin-top: 20px;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
-/* Acomodo de cada botón en su lugar de la cruz */
-.d-pad.up    { grid-area: up; }
-.d-pad.left  { grid-area: left; }
-.d-pad.right { grid-area: right; }
-.d-pad.down  { grid-area: down; }
+/* 2. Coordenadas exactas para armar la cruz */
+#btn-up    { grid-column: 2; grid-row: 1; }
+#btn-left  { grid-column: 1; grid-row: 2; }
+#btn-right { grid-column: 3; grid-row: 2; }
+#btn-down  { grid-column: 2; grid-row: 3; }
 
-/* El diseño del botón arcade 3D */
-.d-pad {
-    width: 65px;
-    height: 65px;
-    background: linear-gradient(135deg, #e91e63, #d81b60); /* Degradado rosa/fucsia */
-    border: 3px solid #ff80ab; /* Borde clarito para dar brillo */
-    border-radius: 50%; /* Círculo perfecto */
-    color: white; /* Flecha blanca */
-    font-size: 26px;
-    font-weight: bold;
+/* 3. Diseño del botón y centrado perfecto del triángulo */
+.controls-container button {
+    width: 60px;
+    height: 60px;
+    margin: 0; 
+    padding: 0;
+    border-radius: 50%; 
+    
+    background-color: rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(5px); 
+    border: 2px solid #d81b60; 
+    color: #d81b60; 
+    font-size: 30px;
+    
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    line-height: 1; 
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif; 
+    box-sizing: border-box;
     
-    /* La sombra mágica que le da el efecto 3D */
-    box-shadow: 0 8px 0 #880e4f, 0 15px 20px rgba(0,0,0,0.4); 
-    transition: all 0.1s ease-in-out;
-    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(216, 27, 96, 0.15); 
+    transition: all 0.15s ease; 
     
-    /* Quita el molesto cuadro azul que sale en Android al tocar */
     -webkit-tap-highlight-color: transparent; 
     user-select: none;
+    cursor: pointer;
 }
 
-/* El efecto cuando tu esposa presione el botón */
-.d-pad:active {
-    transform: translateY(6px); /* El botón se hunde hacia abajo */
-    box-shadow: 0 2px 0 #880e4f, 0 5px 10px rgba(0,0,0,0.3); /* La sombra se hace pequeña */
-    background: linear-gradient(135deg, #d81b60, #ad144b); /* Se oscurece un poco */
+/* 4. Efecto al presionar */
+.controls-container button:active {
+    background-color: #d81b60; 
+    color: white; 
+    transform: scale(0.85); 
+    box-shadow: 0 0 15px rgba(216, 27, 96, 0.6); 
+}
+
+#btn-up { 
+    padding-bottom: 4px; /* Empuja el ▲ hacia arriba */
+}
+
+#btn-down { 
+    padding-top: 4px; /* Empuja el ▼ hacia abajo */
+}
+
+#btn-left { 
+    padding-right: 4px; /* Empuja el ◀ hacia la izquierda */
+}
+
+#btn-right { 
+    padding-left: 4px; /* Empuja el ▶ hacia la derecha */
 }
 
 /* =========================================
