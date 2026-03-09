@@ -83,39 +83,58 @@ h2 {
     z-index: 2;
 }
 
-/* --- CONTROLES PARA MÓVIL --- */
-.mobile-controls {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px; 
-    margin-bottom: 10px; 
-}
+/* =========================================
+   DISEÑO DE LOS BOTONES DE MOVIMIENTO
+========================================= */
 
-.horizontal-btns {
-    display: flex;
-    gap: 40px; 
-}
-
-.d-pad {
-    background-color: #fff;
-    border: 3px solid #d81b60;
-    border-radius: 50%;
-    width: 55px; 
-    height: 55px;
-    font-size: 1.5rem;
-    display: flex;
+/* Contenedor en forma de cruz */
+.controls-container {
+    display: grid;
+    grid-template-areas:
+        ". up ."
+        "left . right"
+        ". down .";
+    gap: 12px; /* Separación entre botones */
     justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 0 #d81b60; 
-    cursor: pointer;
-    color: #333; 
-    -webkit-tap-highlight-color: transparent; 
+    margin-top: 20px;
+    padding-bottom: 20px;
 }
 
+/* Acomodo de cada botón en su lugar de la cruz */
+.d-pad.up    { grid-area: up; }
+.d-pad.left  { grid-area: left; }
+.d-pad.right { grid-area: right; }
+.d-pad.down  { grid-area: down; }
+
+/* El diseño del botón arcade 3D */
+.d-pad {
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(135deg, #e91e63, #d81b60); /* Degradado rosa/fucsia */
+    border: 3px solid #ff80ab; /* Borde clarito para dar brillo */
+    border-radius: 50%; /* Círculo perfecto */
+    color: white; /* Flecha blanca */
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* La sombra mágica que le da el efecto 3D */
+    box-shadow: 0 8px 0 #880e4f, 0 15px 20px rgba(0,0,0,0.4); 
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    
+    /* Quita el molesto cuadro azul que sale en Android al tocar */
+    -webkit-tap-highlight-color: transparent; 
+    user-select: none;
+}
+
+/* El efecto cuando tu esposa presione el botón */
 .d-pad:active {
-    transform: translateY(4px);
-    box-shadow: none; 
+    transform: translateY(6px); /* El botón se hunde hacia abajo */
+    box-shadow: 0 2px 0 #880e4f, 0 5px 10px rgba(0,0,0,0.3); /* La sombra se hace pequeña */
+    background: linear-gradient(135deg, #d81b60, #ad144b); /* Se oscurece un poco */
 }
 
 /* =========================================
