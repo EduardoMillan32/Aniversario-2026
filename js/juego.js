@@ -51,8 +51,8 @@ function loadLevel(esReintento = false) {
                 
                 let paredDer = mapaOriginal[y][x].includes('D') || x === mapWidth - 1 || (x < mapWidth - 1 && mapaOriginal[y][x+1].includes('I'));
                 let paredIzq = mapaOriginal[y][x].includes('I') || x === 0 || (x > 0 && mapaOriginal[y][x-1].includes('D'));
-                let paredAba = mapaOriginal[y][x].includes('B') || y === mapHeight - 1 || (y < mapHeight - 1 && (mapaOriginal[y+1][x].includes('A') || mapaOriginal[y+1][x].includes('T')));
-                let paredArr = mapaOriginal[y][x].includes('A') || mapaOriginal[y][x].includes('T') || y === 0 || (y > 0 && mapaOriginal[y-1][x].includes('B'));
+                let paredAba = mapaOriginal[y][x].includes('B') || y === mapHeight - 1 || (y < mapHeight - 1 && (mapaOriginal[y+1][x].includes('T')));
+                let paredArr = mapaOriginal[y][x].includes('T') || y === 0 || (y > 0 && mapaOriginal[y-1][x].includes('B'));
 
                 if (paredDer && paredIzq) { 
                     dy = (!paredAba) ? 1 : -1; 
@@ -145,8 +145,8 @@ function moveEnemies() {
 
             if (enemy.dx === 1 && (cellCurrent.includes('D') || cellTarget.includes('I'))) hitWall = true;
             if (enemy.dx === -1 && (cellCurrent.includes('I') || cellTarget.includes('D'))) hitWall = true;
-            if (enemy.dy === 1 && (cellCurrent.includes('B') || cellTarget.includes('A') || cellTarget.includes('T'))) hitWall = true;
-            if (enemy.dy === -1 && (cellCurrent.includes('A') || cellCurrent.includes('T') || cellTarget.includes('B'))) hitWall = true;
+            if (enemy.dy === 1 && (cellCurrent.includes('B') || cellTarget.includes('T'))) hitWall = true;
+            if (enemy.dy === -1 && (cellCurrent.includes('T') || cellTarget.includes('B'))) hitWall = true;
         }
 
         if (hitWall) {
@@ -164,8 +164,8 @@ function moveEnemies() {
                 let cellTarget = mapaOriginal[nextY][nextX] || "";
                 if (enemy.dx === 1 && (cellCurrent.includes('D') || cellTarget.includes('I'))) trapped = true;
                 if (enemy.dx === -1 && (cellCurrent.includes('I') || cellTarget.includes('D'))) trapped = true;
-                if (enemy.dy === 1 && (cellCurrent.includes('B') || cellTarget.includes('A') || cellTarget.includes('T'))) trapped = true;
-                if (enemy.dy === -1 && (cellCurrent.includes('A') || cellCurrent.includes('T') || cellTarget.includes('B'))) trapped = true;
+                if (enemy.dy === 1 && (cellCurrent.includes('B') || cellTarget.includes('T'))) trapped = true;
+                if (enemy.dy === -1 && (cellCurrent.includes('T') || cellTarget.includes('B'))) trapped = true;
             }
             
             if (trapped) {
@@ -251,6 +251,3 @@ document.addEventListener('DOMContentLoaded', () => {
         loadLevel();
     });
 });
-
-// INICIAR EL JUEGO AL CARGAR
-loadLevel();

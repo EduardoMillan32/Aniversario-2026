@@ -188,3 +188,15 @@ h2 {
         opacity: 0; /* Se desvanece por completo */
     }
 }
+
+
+
+.warning-text {
+    color: #ff1744 !important;
+    animation: warningPulse 0.5s ease;
+}
+
+@keyframes warningPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}

@@ -14,8 +14,8 @@ const GAME_CONFIG = {
             itemEmoji: "📱",
             enemigoEmoji: "📅",
             metaEmoji: "❤️",
-            cantidadFotos: 3,
-            extension: ".jpg",
+            cantidadFotos: 1,
+            extension: ".jpeg",
             tituloEvento: "Desde que me diste tu numero han pasado:",
             fechaEvento: "2018-04-27T07:30:00",
             // T=Arriba, B=Abajo, I=Izquierda, D=Derecha | -P=Jugador, -O=Objeto, -E=Enemigo, -M=Meta
@@ -45,7 +45,7 @@ const GAME_CONFIG = {
             itemEmoji: "🍣",    
             enemigoEmoji: "⏰", 
             metaEmoji: "❤️",
-            cantidadFotos: 3,
+            cantidadFotos: 5,
             extension: ".jpg",
             tituloEvento: "Desde nuestra primera cita han pasado:",
             fechaEvento: "2018-05-20T15:38:00",
@@ -80,7 +80,7 @@ const GAME_CONFIG = {
             itemEmoji: "💋",    
             enemigoEmoji: "🙈", 
             metaEmoji: "❤️",
-            cantidadFotos: 3,
+            cantidadFotos: 7,
             extension: ".jpg",
             tituloEvento: "Desde nuestro primer beso han pasado:",
             fechaEvento: "2018-06-02T16:30:00",
@@ -113,7 +113,7 @@ const GAME_CONFIG = {
             itemEmoji: "🎈",    
             enemigoEmoji: "🩹", 
             metaEmoji: "❤️",
-            cantidadFotos: 3,
+            cantidadFotos: 7,
             extension: ".jpg",
             tituloEvento: "Desde que te volviste mi novia han pasado:",
             fechaEvento: "2018-06-14T21:30:00",
@@ -144,26 +144,26 @@ const GAME_CONFIG = {
             itemEmoji: "🍂",    
             enemigoEmoji: "🎒", 
             metaEmoji: "❤️",
-            cantidadFotos: 3,
+            cantidadFotos: 7,
             extension: ".jpg",
-            tituloEvento: "Deste tu primer te amo han pasado:",
+            tituloEvento: "Desde tu primer te amo han pasado:",
             fechaEvento: "2018-07-31T19:00:00",
             // T=Arriba, B=Abajo, I=Izquierda, D=Derecha | -P=Jugador, -O=Objeto, -E=Enemigo, -M=Meta
             mapa: [
                 //COLUMNA
                 // 1     2       3       4       5       6       7       8      9       10
                 // Fila 1
-                ["I-P", "TD",   "T",    "T",    "T",    "T-E",  "T",   "IT",    "T",    "TD"],
+                ["I-P", "TD",   "T",    "T",    "T",    "T-E",  "T",    "IT",    "T",    "TD"],
                 // Fila     
-                ["ITD", "D",    "D",    " ",    "I",    "TD",   "",    "ID",    "D",    "D"],
+                ["ITD", "D",    "D",    " ",    "I",    "TD",   " ",    "ID",    "D",    "D"],
                 // Fila 3
                 ["I",   "D",    "D",    " ",    "T",   "ID",    " ",    "T",    "D",    "D"],
                 // Fila 4
-                ["I",  "ID",    "T",    "TD",    "",   "ID",    "T",    "T",    "TD-O", "D-E"],
+                ["I",  "ID",    "T",    "TD",    " ",   "ID",   "T",    "T",    "TD-O", "D-E"],
                 // Fila 5
-                ["I",   "T",    "D",    "D",    "",     "ID",   "D",    "T",    "T",    "D"],
+                ["I",   "T",    "D",    "D",    " ",     "ID",  "D",    "T",    "T",    "D"],
                 // Fila 6
-                ["IT",  "T",    "T-E",  "D",    "",     "I",    "D",    "D",    "TD-O", "D"],
+                ["IT",  "T",    "T-E",  "D",    " ",     "I",   "D",    "D",    "TD-O", "D"],
                 // Fila 7
                 ["ID",  " ",    "IT",    "D",   " ",    "TD",   "T",    "D",    " ",    "D"],
                 // Fila 8
@@ -179,7 +179,7 @@ const GAME_CONFIG = {
             itemEmoji: "💍",    
             enemigoEmoji: "⏳", 
             metaEmoji: "❤️",
-            cantidadFotos: 3,
+            cantidadFotos: 9,
             extension: ".jpg",
             tituloEvento: "Y finalmente desde nuestra boda han pasado:",
             fechaEvento: "2023-04-22T19:30:00",

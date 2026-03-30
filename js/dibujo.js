@@ -15,16 +15,6 @@ function drawMap() {
 
     levelTitle.textContent = `Nivel ${levelData.id}`;
 
-    // Calcula qué tan grande debe ser el emoji dependiendo de cuántos pasillos hay.
-    // Si hay 5 columnas, el número será grande. Si hay 20, será chiquito.
-    let tamañoCalculado = Math.floor(320 / cols);
-    
-    if (tamañoCalculado > 50) {
-        tamañoCalculado = 50; 
-    }
-
-    const responsiveFontSize = tamañoCalculado + "px";
-
     for (let y = 0; y < rows; y++) {
         for (let x = 0; x < cols; x++) {
             const cellData = mapArray[y][x]; 
