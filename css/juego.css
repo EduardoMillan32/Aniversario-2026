@@ -16,7 +16,8 @@ body {
     justify-content: space-evenly; 
     align-items: center;
     background-color: #fce4ec; 
-    overflow: hidden; 
+    overflow: hidden;
+    touch-action: none;
 }
 
 /* --- PANTALLA DEL JUEGO --- */

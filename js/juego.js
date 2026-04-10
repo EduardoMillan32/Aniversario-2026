@@ -104,6 +104,10 @@ function movePlayer(dx, dy) {
     }
 
     if (nextCell.includes('-O')) {
+        const popSound = document.getElementById('pickup-sound');
+        popSound.currentTime = 0; // Regresa el sonido al inicio por si agarra dos muy rápido
+        popSound.play().catch(e => console.log("Bloqueado", e));
+
         collectedItems++;
         mapArray[nextY][nextX] = nextCell.replace('-O', ''); 
     }
@@ -191,7 +195,12 @@ function moveEnemies() {
 }
 
 function die() {
+    const crashSound = document.getElementById('crash-sound');
+    crashSound.currentTime = 0; 
+    crashSound.play().catch(e => console.log("Bloqueado", e));
+    
     clearInterval(enemyInterval);
+
     let randomTaunt = "¡Te atraparon! 💥 Inténtalo de nuevo."; 
     
     if (GAME_CONFIG.Derrota && GAME_CONFIG.Derrota.length > 0) {
@@ -242,11 +251,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnStart = document.getElementById('btn-start-game');
     const startScreen = document.getElementById('start-screen');
     const gameScreen = document.getElementById('game-screen');
+    const bgMusic = document.getElementById('bg-music');
 
     btnStart.addEventListener('click', () => {
         startScreen.classList.add('hidden');
         
         gameScreen.classList.remove('hidden');
+
+        bgMusic.volume = 0.6; // Volumen al 40% para que no la asuste
+        bgMusic.play().catch(e => console.log("El navegador bloqueó el audio", e));
         
         loadLevel();
     });
