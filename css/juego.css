@@ -18,6 +18,8 @@ body {
     background-color: #fce4ec; 
     overflow: hidden;
     touch-action: none;
+    -webkit-user-select: none; /* Evita seleccionar texto en iPhone */
+    user-select: none;
 }
 
 /* --- PANTALLA DEL JUEGO --- */
@@ -28,6 +30,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 h2 {
