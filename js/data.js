@@ -6,7 +6,7 @@ const GAME_CONFIG = {
         "¿Y asi te haces llamar Thorn Princess? Con razón siempre te gano. 😂",
         "Si ocupas ayuda me lo puedes pedir 🙋‍♂️, no todos son buenos en los juegos jajaja",
         "Oye y si empezamos a hacer apuestas 🤝💸, creo que puedo ganar mucho con esto 👀",
-        "Con razon no la armas en el secuence 🃏🔴🔵🤷‍♂️"
+        "Con razon no la armas en el sequence 🃏🔴🔵🤷‍♂️"
     ],
     niveles: [
         {
